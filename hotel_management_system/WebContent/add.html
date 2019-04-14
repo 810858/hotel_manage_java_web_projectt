@@ -1,0 +1,99 @@
+<html>
+<HEAD>
+<STYLE>
+BODY{
+	background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(t.jpg);
+height:100vh;
+	background-size:cover;
+	background-position:center;
+	background-size:cover;
+	gravity:center;
+	
+	font-face:Bold;
+	
+COLOR:blue;
+FONT-size:20PX;}
+ul{
+	float:left;
+List-style-type:none;
+margin:0px;
+padding:0px;
+margin-top:5px;
+
+}
+ul li{
+	display:inline-block;
+	width:160px;
+
+
+
+}
+ul li a{
+	text-decoration:none;
+	color:#fff;
+	padding:5PX 5px;
+	border:1px solid #fff;
+	transition:0.7s ease;
+display:block;
+}
+ul li a:hover
+{
+background-color:#fff;
+color:#000;
+	
+display:block;
+}
+ul li.active a{
+background-color:#fff;
+color:#000;
+}
+ul li ul li{
+	
+	display:none;
+	
+}
+ul li:hover ul li{
+	display:block;
+margin-top:-3px;
+
+}	
+</STYLE>
+</HEAD>
+<body>
+<header>
+<ul>
+<li class="active"><a href="admin1.html">Home</a></li>
+
+
+<li><a href="update.jsp">Update Rooms</a></li>
+<li><a href="delete.jsp">Delete Rooms</a></li>
+
+
+
+
+
+<li><a href="about1.html">About us</a></li>
+<li><a href="contact3.html">Contact Info</a></li>
+</ul>
+</header>
+<br>
+<PRE>
+<form align="center" action="ADD_SER" METHOD="POST">
+<h1>Add Room Details</h1>
+<BR>
+ID            :<INPUT TYPE="TEXT" VALUE="" SIZE="30" WIDTH="90" name="IDD" ID="FN" onblur="fn()">
+<BR>
+Room TYPE     :<INPUT TYPE="TEXT" VALUE="" SIZE="30"  name="ROOM" ID="LN" onblur="fn2()">
+<BR>
+TARRIF        :<INPUT TYPE="TEXT" VALUE="" SIZE="30"  name="TARRI" ID="t" onblur="fn2()">
+<br>
+QUANTITY      :<INPUT TYPE="TEXT" VALUE="" SIZE="30"  onfocus="abc(this)" name="QTY" ID="FN" onblur="fn()">
+<BR>
+<input type="submit" value="ADD"><BR>
+<ul>
+<li><a href="addd.jsp">SHOW ROOMS</a></li>
+</ul>
+</form>
+</PRE>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<html>
+<style>
+/*
+
+
+Colors:
+	Body 		: #969696
+	Headers 	: #151515
+	Primary 	: #f36700
+	Grey 		: #F9F9F9 #ECECEC
+*/
+body {
+	color:#969696;
+	font-size:16px;
+	overflow-x:hidden;
+	font-family: 'Cabin', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight:700;
+	color:#151515;
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+	font-size:54px;
+}
+
+h2 {
+	font-size:36px;
+}
+
+h3 {
+	font-size:24px;
+}
+
+h4 {
+	font-size:16px;
+}
+
+a {
+	color:#151515;
+	-webkit-transition:0.2s color;
+	transition:0.2s color;
+}
+
+a:hover,
+a:focus{
+	color:#f36700;
+    text-decoration: none;
+    outline: none;
+}
+
+ul,ol{
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.white-text {
+	color:#FFF;
+}
+
+/* --- Section --- */
+.section {
+	position:relative;
+	padding-top:80px;
+	padding-bottom:80px;
+}
+
+.section-header .title {
+	font-family: 'Dancing Script', cursive;
+	margin-top:0px;
+}
+
+.title:after {
+	content:"";
+	display: block;
+	width: 15px;
+	height: 2px;
+	background-color: #f36700;
+	margin: 15px 0px 30px;
+}
+
+.text-center .title:after {
+	margin: 15px auto 30px;
+}
+
+.section-header .sub-title {
+	font-weight:400;
+	color: #f36700;
+}
+
+/* --- Background Image --- */
+.bg-image {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-position:center;
+	background-size:cover;
+	z-index:-1;
+}
+
+.bg-image.bg-parallax {
+	background-attachment:fixed;
+}
+
+.bg-image.overlay:after {
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	opacity: 0.7;
+	background-color:#000;
+}
+
+/* --- Buttons --- */
+.main-button {
+	display:inline-block;
+	padding:15px 30px;
+	border:none;
+	border-radius:40px;
+	background-color:#f36700;
+	color:#FFF;
+	text-transform: uppercase;
+	font-weight: 700;
+	-webkit-transition:0.2s opacity;
+	transition:0.2s opacity;
+}
+.main-button:hover {
+	color:#FFF;
+	opacity:0.8;
+}
+
+/* --- Inputs --- */
+.input {
+	width: 100%;
+	height: 40px;
+	padding: 0px 10px;
+	border: 2px solid #ECECEC;
+	border-radius: 40px;
+	background: transparent;
+}
+
+textarea.input {
+	height: 160px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+/*------------------------------------*\
+	Navigation
+\*------------------------------------*/
+#header {
+	position:absolute;
+	left:0;
+	right:0;
+	margin-top:15px;
+	z-index:22;
+}
+
+
+
+
+/*------------------------------------*\
+	Reservation
+\*------------------------------------*/
+#reservation.section {
+	padding-bottom:0px;
+}
+
+#reservation .bg-image  {
+	height:75%;
+}
+
+.reserve-form {
+	padding: 30px 2% 30px;
+	background: rgba(21, 21, 21, 0.9);
+}
+
+.reserve-form  .form-group {
+	margin-bottom:30px;
+}
+
+.reserve-form  .form-group label {
+	color: #FFF;
+	margin-left: 10px;
+}
+
+.reserve-form .input {
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+/*------------------------------------*\
+	Opening Time
+\*------------------------------------*/
+.opening-time {
+	padding: 40px 8% 40px;
+	background: #151515;
+	margin-top: 40px;
+}
+
+.opening-time ul li .day {
+	display:inline-block;
+	font-weight:400;
+	color:#fff;
+}
+
+.opening-time ul li .hours {
+	float: right;
+	font-size: 14px;
+	margin-top: 12px;
+	font-weight:400;
+	color:#f36500;
+}
+.loginbox input
+{
+width: 20%;
+margin-bottom: 20px;
+}
+.loginbox input[type="submit"]
+{
+border: none;
+outline: none;
+height: 40px;
+margin-left:15px;
+background: #E89E00 ;
+color: #fff;
+font-size: 18px;
+border-radius: 20px;
+}
+
+
+
+
+</style>
+<body>
+<form class="reserve-form row" action="reserve_servlet" method="post" >
+<div class="col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+						
+							<div class="section-header text-center">
+								<h4 class="sub-title">Reservation</h4>
+								<h2 class="title white-text">Book Your Table</h2>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="name">Name:</label>
+									<input class="input" type="text" name="name" placeholder="Name" id="name">
+								</div>
+								<div class="form-group">
+									<label for="phone">Phone:</label>
+									<input class="input" type="tel" name="phone" placeholder="Phone" id="phone">
+								</div>
+								<div class="form-group">
+									<label for="date">Date:</label>
+									<input class="input" type="date" name="date" placeholder="MM/DD/YYYY" id="date">
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="email">Email:</label>
+									<input class="input" type="email" name="email" placeholder="Email" id="email">
+								</div>
+								<div class="form-group">
+									<label for="number">Number of Guests:</label>
+									<select class="input" id="number" name="number">
+										<option>1 Person</option>
+										<option>2 People</option>
+										<option>3 People</option>
+										<option>4 People</option>
+										<option>5+ People</option>
+										
+									</select>
+								</div>
+								<div class="form-group">
+								  <label for="time">Time:</label>
+								  <input class="input" type="text" name="time" placeholder="HH:MM" id="time">
+								</div>
+							</div>
+<div class="loginbox">
+<input type="submit" name="submit" value="BOOK NOW">
+</div>
+							
+						
+							</form>
+					</div>
+					<!-- /reservation form -->
+
+					<!-- opening time -->
+					<div class="col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1">
+						<div class="opening-time row">
+							<div class="section-header text-center">
+								<h2 class="title white-text">Opening Time</h2>
+							</div>
+							<ul>
+								<li>
+									<h4 class="day">Sunday</h4>
+									<h4 class="hours">8:00 am -11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Monday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Tuesday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Wednesday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Thursday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Friday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+								<li>
+									<h4 class="day">Saturday</h4>
+									<h4 class="hours">8:00 am - 11:00 pm</h4>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /opening time -->
+
+				</div>
+				<!-- /row -->
+
+			</div>
+			<!-- /container -->
+
+		</div>
+		<!-- /Reservation -->
+	
+		
+		</body>
+		</html>

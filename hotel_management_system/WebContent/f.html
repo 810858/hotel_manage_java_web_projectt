@@ -1,0 +1,75 @@
+<html>
+<style>
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: brown;
+    color: #FFF;
+}
+</style>
+<body>
+<form action="bookservlet" method="post">
+
+<table id="table">
+
+        <tr>
+            <td>ID</td>
+            <td>bed Type</td>
+            <td>TArrif</td>
+
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>single</td>
+            <td>100¬</td>
+
+        </tr>
+        <tr>
+            <td>303</td>
+            <td>double</td>
+            <td>120</td>
+
+        </tr>
+    </table>
+	
+ID    :<INPUT TYPE="TEXT" VALUE="" SIZE="30"  onfocus="abc(this)" name="idd" ID="FN" onblur="fn()">
+<BR>
+BEd Type     :<INPUT TYPE="TEXT" VALUE="" SIZE="30" onfocus="abc(this)" name="bed" ID="LN" onblur="fn2()">
+<BR>
+tarrif      :<INPUT TYPE="TEXT" VALUE="" SIZE="30" name="tarri" id="a" onfocus="abc(this)">
+  
+
+    <input type="submit" id="tst" name="submit" value="OK" onclick="window.location.href='book.html'" />
+	
+	<script>
+	var table = document.getElementById('table');
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                         //rIndex = this.rowIndex;
+                         document.getElementById("FN").value = this.cells[0].innerHTML;
+                         document.getElementById("LN").value = this.cells[1].innerHTML;
+                         document.getElementById("a").value = this.cells[2].innerHTML;
+                    };
+                }
+	var table = document.getElementById('table'),
+    selected = table.getElementsByClassName('selected');
+table.onclick = highlight;
+function highlight(e) {
+    if (selected[0]) selected[0].className = '';
+    e.target.parentNode.className = 'selected';
+}
+function fnselect(){
+var $row=$(this).parent().find('td');
+    var clickeedID=$row.eq(0).text();
+    alert(clickeedID);
+}
+
+
+
+</script>
+	</form>
+	</body>
+	</html>

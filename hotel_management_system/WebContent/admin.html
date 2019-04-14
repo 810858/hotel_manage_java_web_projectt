@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Login Form</title>
+</head>
+<style>
+.login_box
+{
+	width:320px;
+	height:420px;
+	background: rgba(0,0,0,0.5);
+	color:#fff;
+	top:60%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	box-sizing:border-box;
+	padding:70px 30px;
+}
+.avatar
+{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	position:absolute;
+	top:-50px;
+	left:calc(35% );
+}
+h1
+{
+	margin:0;
+	padding:0 0 20px;
+	text-align:center;
+	font-size:22px;
+	
+}
+body
+{
+	margin:0;
+	padding:0;
+	background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url(bed1.jpg);
+	height:100vh;
+	background-size:cover;
+	background-position:center;
+	
+	font-family:sans-serif;
+}
+.login_box p{
+	margin:0;
+	padding:0;
+	font-weight:bold:
+}
+.login_box input
+{
+	width:100%
+	margin-bottom:20px;
+}
+.login_box input[type="text"],input[type="password"]
+{
+	border:none;
+	boreder-botton:2px solid #fff;
+	background:transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size:16px;
+}	
+.login_box input[type="submit"]
+{
+border:none;
+outline:none;
+height:50px;
+width:250px;
+top:70%;
+background:#1c8adb;
+color:#fff;
+font-size:18px;
+border-radius:20px;
+}
+.login_box input[type="submit"]:hover
+{
+top:70%;
+
+cursor:pointer;
+background:#39dc7;
+color:#000;
+
+}
+login_box a{
+text decoration:none;
+font_size:14px;
+color:#fff;
+}
+login_box a:hover
+{
+color:#39dc7;
+}
+</style>
+
+<body>
+<h1><font size="40">ADMIN LOGIN</font></h1>
+<h2><center>Only Admin is allowed to view this Page</center></h2>
+<div class="login_box">
+<img src="log.png" class="avatar">
+<h1>Login Here</h1>
+<form action="admin_servlet" method="post">
+<p>UserName</p>
+<input type="text" name="username" placeholder="Enter UserName"></input>
+<p>Password</p>
+<input type="password" name="password" placeholder="Enter  password"></input><br/><br/>
+<input type="submit" name="submit" value="Login" onclick="User.html"><br/>
+
+
+</form>
+</div>
+</body>
+</html>
